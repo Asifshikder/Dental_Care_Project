@@ -10,5 +10,6 @@ namespace Project.Core.Domain.Subscriptions
     {
         public long VendorId { get; set; }
         public long SubscribtionId { get; set; }
+        public DateTime ExpiredAt { get; set; }
     }
 }

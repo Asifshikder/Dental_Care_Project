@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace Project.Core.Domain.Authentication
 {
-    public class ApplicationUser:IdentityUser
+    public class ApplicationUser : IdentityUser
     {
+        public string DisplayName { get; set; }
+        public string DisplayImage { get; set; }
     }
 }

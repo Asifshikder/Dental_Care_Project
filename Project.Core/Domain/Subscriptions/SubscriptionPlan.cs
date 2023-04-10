@@ -11,7 +11,7 @@ namespace Project.Core.Domain.Subscriptions
     {
         public string Title { get; set; } = string.Empty;
         public decimal Price { get; set; }
-        public PricingPlan PricingPlan { get; set; }
+        public PricingType PricingPlan { get; set; }
         public string Features { get; set; } = string.Empty;
     }
 }

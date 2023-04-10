@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project.Core.Enums
 {
-    public enum PricingPlan
+    public enum PricingType
     {
         Monthly = 1,
         Yearly = 2
