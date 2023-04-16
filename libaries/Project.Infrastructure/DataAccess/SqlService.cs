@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using Project.Infrastructure.Settings;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -26,6 +27,11 @@ namespace Project.Infrastructure.DataAccess
         {
             using IDbConnection connection = new SqlConnection(sqlProperties.ConnectionString);
             await connection.ExecuteAsync(storedProcedure, parameter, commandType: CommandType.StoredProcedure);
+        }
+        public async Task<IEnumerable<T>> ExecuteAsync<T, U>(string query, U parameter)
+        {
+            using IDbConnection connection = new SqlConnection(sqlProperties.ConnectionString);
+            return await connection.QueryAsync<T>(query, parameter, commandType: CommandType.Text);
         }
     }
 }

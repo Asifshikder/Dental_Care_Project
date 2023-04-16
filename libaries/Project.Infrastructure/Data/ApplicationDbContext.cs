@@ -8,6 +8,7 @@ using Project.Core.Domain.Payments;
 using Project.Core.Domain.Service;
 using Project.Core.Domain.Subscriptions;
 using Project.Core.Domain.Vendor;
+using Project.Infrastructure.Data.SeedSqls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace Project.Infrastructure.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>, IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
@@ -30,11 +31,14 @@ namespace Project.Infrastructure.Data
         public virtual DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
         public virtual DbSet<VendorSubscription> VendorSubscriptions { get; set; }
         public virtual DbSet<VendorInfo> VendorInfos { get; set; }
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override async void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            //FixedData.SeedData(builder);
             base.OnModelCreating(builder);
+        }
+        public async Task<int> SaveChangesAsync()
+        {
+            return await base.SaveChangesAsync();
         }
     }
 }

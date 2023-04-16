@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Project.Infrastructure.Migrations
 {
-    public partial class init_database : Migration
+    public partial class init_db : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -254,6 +254,31 @@ namespace Project.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "RefreshToken",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Token = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Expires = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedByIp = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Revoked = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RevokedByIp = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReplacedByToken = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RefreshToken", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RefreshToken_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PatientPayments",
                 columns: table => new
                 {
@@ -442,6 +467,11 @@ namespace Project.Infrastructure.Migrations
                 column: "TreatmentId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_RefreshToken_ApplicationUserId",
+                table: "RefreshToken",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_VendorSubscriptions_SubscriptionId",
                 table: "VendorSubscriptions",
                 column: "SubscriptionId");
@@ -476,13 +506,13 @@ namespace Project.Infrastructure.Migrations
                 name: "PatientTreatments");
 
             migrationBuilder.DropTable(
+                name: "RefreshToken");
+
+            migrationBuilder.DropTable(
                 name: "VendorSubscriptions");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "PaymentTypes");
@@ -492,6 +522,9 @@ namespace Project.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Treatments");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "SubscriptionPlans");

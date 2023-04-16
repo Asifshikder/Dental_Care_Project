@@ -11,5 +11,10 @@ namespace Project.Core.Domain.Authentication
     {
         public string DisplayName { get; set; }
         public string DisplayImage { get; set; }
+        public List<RefreshToken> RefreshTokens { get; set; }
+        public bool OwnsToken(string token)
+        {
+            return this.RefreshTokens?.Find(x => x.Token == token) != null;
+        }
     }
 }

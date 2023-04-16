@@ -4,5 +4,6 @@
     {
         Task CommandAsync<T>(string storedProcedure, T parameter);
         Task<IEnumerable<T>> QueryAsync<T, U>(string storedProcedure, U parameter);
+        Task<IEnumerable<T>> ExecuteAsync<T, U>(string query, U parameter);
     }
 }

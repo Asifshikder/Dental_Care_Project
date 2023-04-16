@@ -1,7 +1,7 @@
 ﻿using Project.Core.Domain.Common;
 using Project.Core.Domain.Subscriptions;
 using Project.Infrastructure.DataAccess;
-using Project.Infrastructure.Procedures;
+using Project.Infrastructure.Sql.Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;

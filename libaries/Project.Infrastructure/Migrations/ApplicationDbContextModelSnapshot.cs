@@ -228,6 +228,49 @@ namespace Project.Infrastructure.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Project.Core.Domain.Authentication.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedByIp")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Expires")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ReplacedByToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Revoked")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RevokedByIp")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("RefreshToken");
+                });
+
             modelBuilder.Entity("Project.Core.Domain.Catalog.Treatment", b =>
                 {
                     b.Property<long>("Id")
@@ -651,6 +694,13 @@ namespace Project.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Project.Core.Domain.Authentication.RefreshToken", b =>
+                {
+                    b.HasOne("Project.Core.Domain.Authentication.ApplicationUser", null)
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("ApplicationUserId");
+                });
+
             modelBuilder.Entity("Project.Core.Domain.Payments.PatientPayment", b =>
                 {
                     b.HasOne("Project.Core.Domain.Common.PaymentType", "PaymentType")
@@ -717,6 +767,11 @@ namespace Project.Infrastructure.Migrations
                     b.Navigation("SubscriptionPlan");
 
                     b.Navigation("VendorInfo");
+                });
+
+            modelBuilder.Entity("Project.Core.Domain.Authentication.ApplicationUser", b =>
+                {
+                    b.Navigation("RefreshTokens");
                 });
 
             modelBuilder.Entity("Project.Core.Domain.Catalog.Treatment", b =>

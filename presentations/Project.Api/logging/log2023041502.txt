@@ -1,0 +1,757 @@
+2023-04-15 02:17:03.233 +06:00 [INF] User profile is available. Using 'C:\Users\Asif\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-15 02:17:03.350 +06:00 [INF] Initializing UI Database
+2023-04-15 02:17:04.405 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:17:04.839 +06:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:17:04.910 +06:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-04-15 02:17:04.950 +06:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-04-15 02:17:05.218 +06:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Configurations] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-04-15 02:17:05.262 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:17:05.464 +06:00 [INF] Now listening on: https://localhost:7216
+2023-04-15 02:17:05.466 +06:00 [INF] Now listening on: http://localhost:5155
+2023-04-15 02:17:05.489 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:17:05.497 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:17:05.503 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-15 02:17:05.505 +06:00 [INF] Hosting environment: Development
+2023-04-15 02:17:05.513 +06:00 [INF] Content root path: C:\Users\Asif\source\repos\DentalCare_Project\presentations\Project.Api\
+2023-04-15 02:17:05.538 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:05.542 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:05.664 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:17:05.818 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:17:05.822 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:17:05.909 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7216/swagger/index.html - -
+2023-04-15 02:17:06.046 +06:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Treatment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-15 02:17:06.053 +06:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'PatientPayment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-15 02:17:06.059 +06:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'PatientTreatment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-15 02:17:06.064 +06:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'SubscriptionPlan'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-04-15 02:17:06.112 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:17:06.119 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:17:06.126 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7216/_framework/aspnetcore-browser-refresh.js - -
+2023-04-15 02:17:06.126 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7216/_vs/browserLink - -
+2023-04-15 02:17:06.146 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7216/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 17.0735ms
+2023-04-15 02:17:06.148 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7216/swagger/index.html - - - 200 - text/html;charset=utf-8 239.1186ms
+2023-04-15 02:17:06.167 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7216/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.1795ms
+2023-04-15 02:17:06.638 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7216/swagger/v1/swagger.json - -
+2023-04-15 02:17:06.734 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7216/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 96.5229ms
+2023-04-15 02:17:07.065 +06:00 [INF] Received HTTP response headers after 1228.6734ms - 200
+2023-04-15 02:17:07.071 +06:00 [INF] End processing HTTP request after 1257.4602ms - 200
+2023-04-15 02:17:07.110 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 1448.6013ms
+2023-04-15 02:17:07.112 +06:00 [INF] Received HTTP response headers after 1566.9658ms - 200
+2023-04-15 02:17:07.115 +06:00 [INF] End processing HTTP request after 1588.4004ms - 200
+2023-04-15 02:17:07.298 +06:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2023-04-15 02:17:07.356 +06:00 [INF] Executed DbCommand (34ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:07.429 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:07.535 +06:00 [INF] Executed DbCommand (7ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:17:09.720 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7216/api/Test - -
+2023-04-15 02:17:09.723 +06:00 [INF] Executing endpoint 'Project.Api.Controllers.TestController.GetAll (Project.Api)'
+2023-04-15 02:17:09.742 +06:00 [INF] Route matched with {action = "GetAll", controller = "Test"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller Project.Api.Controllers.TestController (Project.Api).
+2023-04-15 02:17:09.867 +06:00 [INF] Executed action Project.Api.Controllers.TestController.GetAll (Project.Api) in 112.2257ms
+2023-04-15 02:17:09.871 +06:00 [INF] Executed endpoint 'Project.Api.Controllers.TestController.GetAll (Project.Api)'
+2023-04-15 02:17:09.905 +06:00 [ERR] Exception of type 'Project.Services.Exceptions.ApiException' was thrown.
+2023-04-15 02:17:10.066 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7216/api/Test - - - 500 - application/json 346.4895ms
+2023-04-15 02:17:11.245 +06:00 [INF] Request starting HTTP/1.1 HEAD https://localhost:7216/ - -
+2023-04-15 02:17:11.247 +06:00 [INF] Request finished HTTP/1.1 HEAD https://localhost:7216/ - - - 404 - - 2.0795ms
+2023-04-15 02:17:11.844 +06:00 [INF] Request starting HTTP/2 GET https://localhost:7216/api/Test - -
+2023-04-15 02:17:11.846 +06:00 [INF] Executing endpoint 'Project.Api.Controllers.TestController.GetAll (Project.Api)'
+2023-04-15 02:17:11.848 +06:00 [INF] Route matched with {action = "GetAll", controller = "Test"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller Project.Api.Controllers.TestController (Project.Api).
+2023-04-15 02:17:11.917 +06:00 [INF] Executed action Project.Api.Controllers.TestController.GetAll (Project.Api) in 66.3798ms
+2023-04-15 02:17:11.920 +06:00 [INF] Executed endpoint 'Project.Api.Controllers.TestController.GetAll (Project.Api)'
+2023-04-15 02:17:11.942 +06:00 [ERR] Exception of type 'Project.Services.Exceptions.ApiException' was thrown.
+2023-04-15 02:17:11.944 +06:00 [INF] Request finished HTTP/2 GET https://localhost:7216/api/Test - - - 500 - application/json 99.3760ms
+2023-04-15 02:17:17.576 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:17:17.582 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:17:17.587 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:17.590 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:17.592 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:17:17.596 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:17:17.597 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:17:17.601 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:17:17.604 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:17:17.753 +06:00 [INF] Received HTTP response headers after 146.0638ms - 200
+2023-04-15 02:17:17.756 +06:00 [INF] End processing HTTP request after 160.4815ms - 200
+2023-04-15 02:17:17.758 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 166.3188ms
+2023-04-15 02:17:17.760 +06:00 [INF] Received HTTP response headers after 167.1661ms - 200
+2023-04-15 02:17:17.764 +06:00 [INF] End processing HTTP request after 177.0541ms - 200
+2023-04-15 02:17:17.772 +06:00 [INF] Executed DbCommand (6ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:17.776 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:17.785 +06:00 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:17:27.808 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:17:27.814 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:17:27.819 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:27.821 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:27.824 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:17:27.826 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:17:27.826 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:17:27.841 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:17:27.845 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:17:27.983 +06:00 [INF] Received HTTP response headers after 137.8985ms - 200
+2023-04-15 02:17:27.986 +06:00 [INF] End processing HTTP request after 159.7238ms - 200
+2023-04-15 02:17:27.988 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 164.6099ms
+2023-04-15 02:17:27.990 +06:00 [INF] Received HTTP response headers after 165.5318ms - 200
+2023-04-15 02:17:27.994 +06:00 [INF] End processing HTTP request after 175.4615ms - 200
+2023-04-15 02:17:27.998 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:28.001 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:28.006 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:17:38.019 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:17:38.021 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:17:38.022 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:38.025 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:38.026 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:17:38.029 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:17:38.029 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:17:38.033 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:17:38.036 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:17:38.185 +06:00 [INF] Received HTTP response headers after 143.8702ms - 200
+2023-04-15 02:17:38.189 +06:00 [INF] End processing HTTP request after 160.0787ms - 200
+2023-04-15 02:17:38.191 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 165.1550ms
+2023-04-15 02:17:38.193 +06:00 [INF] Received HTTP response headers after 165.8702ms - 200
+2023-04-15 02:17:38.199 +06:00 [INF] End processing HTTP request after 176.5889ms - 200
+2023-04-15 02:17:38.202 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:38.207 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:38.212 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:17:48.245 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:17:48.251 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:17:48.257 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:48.260 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:48.263 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:17:48.266 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:17:48.267 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:17:48.270 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:17:48.273 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:17:48.459 +06:00 [INF] Received HTTP response headers after 179.266ms - 200
+2023-04-15 02:17:48.464 +06:00 [INF] End processing HTTP request after 196.9645ms - 200
+2023-04-15 02:17:48.468 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 205.1098ms
+2023-04-15 02:17:48.470 +06:00 [INF] Received HTTP response headers after 206.4618ms - 200
+2023-04-15 02:17:48.475 +06:00 [INF] End processing HTTP request after 217.907ms - 200
+2023-04-15 02:17:48.478 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:48.485 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:48.490 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:17:58.518 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:17:58.521 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:17:58.525 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:58.529 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:17:58.533 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:17:58.537 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:17:58.538 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:17:58.553 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:17:58.558 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:17:58.722 +06:00 [INF] Received HTTP response headers after 159.9376ms - 200
+2023-04-15 02:17:58.725 +06:00 [INF] End processing HTTP request after 188.5095ms - 200
+2023-04-15 02:17:58.727 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 194.1402ms
+2023-04-15 02:17:58.729 +06:00 [INF] Received HTTP response headers after 196.4634ms - 200
+2023-04-15 02:17:58.732 +06:00 [INF] End processing HTTP request after 206.5761ms - 200
+2023-04-15 02:17:58.735 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:58.739 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:17:58.743 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:18:08.766 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:18:08.773 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:18:08.780 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:08.784 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:08.787 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:18:08.792 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:18:08.792 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:18:08.796 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:18:08.799 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:18:08.967 +06:00 [INF] Received HTTP response headers after 163.1791ms - 200
+2023-04-15 02:18:08.974 +06:00 [INF] End processing HTTP request after 181.0843ms - 200
+2023-04-15 02:18:08.978 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 190.8407ms
+2023-04-15 02:18:08.982 +06:00 [INF] Received HTTP response headers after 192.236ms - 200
+2023-04-15 02:18:08.988 +06:00 [INF] End processing HTTP request after 208.5799ms - 200
+2023-04-15 02:18:08.994 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:09.001 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:09.008 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:18:19.020 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:18:19.028 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:18:19.035 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:19.039 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:19.043 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:18:19.045 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:18:19.046 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:18:19.050 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:18:19.053 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:18:19.196 +06:00 [INF] Received HTTP response headers after 136.297ms - 200
+2023-04-15 02:18:19.200 +06:00 [INF] End processing HTTP request after 153.5515ms - 200
+2023-04-15 02:18:19.203 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 159.6753ms
+2023-04-15 02:18:19.204 +06:00 [INF] Received HTTP response headers after 161.2556ms - 200
+2023-04-15 02:18:19.208 +06:00 [INF] End processing HTTP request after 173.8271ms - 200
+2023-04-15 02:18:19.216 +06:00 [INF] Executed DbCommand (5ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:19.221 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:19.231 +06:00 [INF] Executed DbCommand (5ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:18:29.231 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:18:29.237 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:18:29.241 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:29.246 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:29.249 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:18:29.252 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:18:29.253 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:18:29.256 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:18:29.259 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:18:29.395 +06:00 [INF] Received HTTP response headers after 129.6124ms - 200
+2023-04-15 02:18:29.399 +06:00 [INF] End processing HTTP request after 145.8274ms - 200
+2023-04-15 02:18:29.401 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 152.3078ms
+2023-04-15 02:18:29.404 +06:00 [INF] Received HTTP response headers after 153.5945ms - 200
+2023-04-15 02:18:29.410 +06:00 [INF] End processing HTTP request after 167.6991ms - 200
+2023-04-15 02:18:29.417 +06:00 [INF] Executed DbCommand (5ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:29.424 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:29.437 +06:00 [INF] Executed DbCommand (7ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:18:39.448 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:18:39.454 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:18:39.457 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:39.461 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:39.463 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:18:39.467 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:18:39.467 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:18:39.470 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:18:39.473 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:18:39.629 +06:00 [INF] Received HTTP response headers after 150.7041ms - 200
+2023-04-15 02:18:39.632 +06:00 [INF] End processing HTTP request after 165.8998ms - 200
+2023-04-15 02:18:39.634 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 171.2245ms
+2023-04-15 02:18:39.636 +06:00 [INF] Received HTTP response headers after 172.3121ms - 200
+2023-04-15 02:18:39.639 +06:00 [INF] End processing HTTP request after 181.881ms - 200
+2023-04-15 02:18:39.642 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:39.645 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:39.651 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:18:49.676 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:18:49.680 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:18:49.686 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:49.690 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:49.693 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:18:49.698 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:18:49.698 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:18:49.705 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:18:49.709 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:18:49.849 +06:00 [INF] Received HTTP response headers after 137.2222ms - 200
+2023-04-15 02:18:49.852 +06:00 [INF] End processing HTTP request after 154.7039ms - 200
+2023-04-15 02:18:49.854 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 161.1107ms
+2023-04-15 02:18:49.856 +06:00 [INF] Received HTTP response headers after 162.4651ms - 200
+2023-04-15 02:18:49.860 +06:00 [INF] End processing HTTP request after 174.0119ms - 200
+2023-04-15 02:18:49.863 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:49.868 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:18:49.871 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:18:59.889 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:18:59.894 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:18:59.900 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:59.905 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:18:59.909 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:18:59.912 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:18:59.913 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:18:59.917 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:18:59.920 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:19:00.073 +06:00 [INF] Received HTTP response headers after 143.9279ms - 200
+2023-04-15 02:19:00.078 +06:00 [INF] End processing HTTP request after 163.715ms - 200
+2023-04-15 02:19:00.082 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 172.6241ms
+2023-04-15 02:19:00.084 +06:00 [INF] Received HTTP response headers after 174.9517ms - 200
+2023-04-15 02:19:00.089 +06:00 [INF] End processing HTTP request after 187.8678ms - 200
+2023-04-15 02:19:00.093 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:19:00.098 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:19:00.106 +06:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+2023-04-15 02:19:10.120 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'HealthChecksDb' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=HealthChecks.UI.SqlServer.Storage 
+2023-04-15 02:19:10.123 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[DiscoveryService], [c].[Name], [c].[Uri]
+FROM [Configurations] AS [c]
+2023-04-15 02:19:10.128 +06:00 [INF] Start processing HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:19:10.132 +06:00 [INF] Sending HTTP request GET "https://localhost:7216/healthz"
+2023-04-15 02:19:10.142 +06:00 [INF] Request starting HTTP/1.1 GET https://localhost:7216/healthz - -
+2023-04-15 02:19:10.145 +06:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: NoTracking 
+2023-04-15 02:19:10.146 +06:00 [INF] Start processing HTTP request GET "http://github.com/"
+2023-04-15 02:19:10.149 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-04-15 02:19:10.152 +06:00 [INF] Sending HTTP request GET "http://github.com/"
+2023-04-15 02:19:11.854 +06:00 [INF] Received HTTP response headers after 1697.0437ms - 200
+2023-04-15 02:19:11.858 +06:00 [INF] End processing HTTP request after 1712.3231ms - 200
+2023-04-15 02:19:11.861 +06:00 [INF] Request finished HTTP/1.1 GET https://localhost:7216/healthz - - - 200 - application/json 1719.2434ms
+2023-04-15 02:19:11.863 +06:00 [INF] Received HTTP response headers after 1727.9618ms - 200
+2023-04-15 02:19:11.866 +06:00 [INF] End processing HTTP request after 1738.8937ms - 200
+2023-04-15 02:19:11.869 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:19:11.873 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__configuration_Name_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[DiscoveryService], [t].[LastExecuted], [t].[Name], [t].[OnStateFrom], [t].[Status], [t].[Uri], [h].[Id], [h].[Description], [h].[HealthCheckExecutionId], [h].[Name], [h].[On], [h].[Status], [h0].[Id], [h0].[Description], [h0].[Duration], [h0].[HealthCheckExecutionId], [h0].[Name], [h0].[Status], [h0].[Tags]
+FROM (
+    SELECT TOP(2) [e].[Id], [e].[DiscoveryService], [e].[LastExecuted], [e].[Name], [e].[OnStateFrom], [e].[Status], [e].[Uri]
+    FROM [Executions] AS [e]
+    WHERE [e].[Name] = @__configuration_Name_0
+) AS [t]
+LEFT JOIN [HealthCheckExecutionHistories] AS [h] ON [t].[Id] = [h].[HealthCheckExecutionId]
+LEFT JOIN [HealthCheckExecutionEntries] AS [h0] ON [t].[Id] = [h0].[HealthCheckExecutionId]
+ORDER BY [t].[Id], [h].[Id]
+2023-04-15 02:19:11.877 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p3='?' (DbType = Int32), @p2='?' (DbType = Time), @p5='?' (DbType = Int32), @p4='?' (DbType = Time), @p7='?' (DbType = Int32), @p6='?' (DbType = Time)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Executions] SET [LastExecuted] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p4
+WHERE [Id] = @p5;
+SELECT @@ROWCOUNT;
+
+UPDATE [HealthCheckExecutionEntries] SET [Duration] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
