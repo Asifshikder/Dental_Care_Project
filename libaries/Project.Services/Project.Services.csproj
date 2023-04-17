@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Authentication\" />
+    <Folder Include="Features\BloodGroups\Commands\" />
+    <Folder Include="Features\BloodGroups\Queries\Models\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -33,5 +33,10 @@ namespace Project.Infrastructure.DataAccess
             using IDbConnection connection = new SqlConnection(sqlProperties.ConnectionString);
             return await connection.QueryAsync<T>(query, parameter, commandType: CommandType.Text);
         }
+        public async Task<IEnumerable<dynamic>> ExecuteAsync<U>(string query, U parameter)
+        {
+            using IDbConnection connection = new SqlConnection(sqlProperties.ConnectionString);
+            return await connection.QueryAsync(query, parameter, commandType: CommandType.Text);
+        }
     }
 }

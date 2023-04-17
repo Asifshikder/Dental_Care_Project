@@ -28,5 +28,11 @@ namespace Project.Api.Controllers
             await SqlSeeder.Seed(context);
             return Ok();
         }
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            return Ok(await Mediator.Send(new GetBloodGroupQuery { Id = id }));
+        }
     }
 }

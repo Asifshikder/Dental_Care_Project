@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Project.Core.Common
 {
-    public class Response<T>
+    public class Response<dynamic>
     {
         public Response()
         {
         }
-        public Response(T data, string message = null)
+        public Response(dynamic data, string message = null)
         {
             Succeeded = true;
             Message = message;
@@ -25,6 +25,6 @@ namespace Project.Core.Common
         public bool Succeeded { get; set; }
         public string Message { get; set; }
         public List<string> Errors { get; set; }
-        public T Data { get; set; }
+        public dynamic Data { get; set; }
     }
 }

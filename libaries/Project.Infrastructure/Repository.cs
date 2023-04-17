@@ -1,4 +1,5 @@
-﻿using Project.Core;
+﻿using Microsoft.EntityFrameworkCore;
+using Project.Core;
 using Project.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
@@ -24,42 +25,49 @@ namespace Project.Infrastructure
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().Where(expression);
         }
 
-        public Task<T> FindByIdAsync(long id)
+        public async Task<T> FindByIdAsync(long id)
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().FindAsync(new { id = id });
         }
 
-        public Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public Task<bool> InsertAsync(T entity)
+        public async Task<T> InsertAsync(T entity)
         {
-            throw new NotImplementedException();
+            await _context.Set<T>().AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public Task<bool> RemoveAsync(T entity)
+        public async Task RemoveAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<bool> RemoveByIdAsync(long id)
+        public async Task RemoveByIdAsync(long id)
         {
-            throw new NotImplementedException();
+            var entity = await FindByIdAsync(id);
+            if (entity != null)
+                await RemoveAsync(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().RemoveRange(entities);
+            _context.SaveChanges();
         }
 
-        public Task<bool> UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

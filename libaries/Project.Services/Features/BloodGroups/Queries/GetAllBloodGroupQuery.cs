@@ -17,11 +17,9 @@ namespace Project.Services.Features.BloodGroups.Queries
     {
         public class GetAllBloodGroupQueryHandler : IRequestHandler<GetAllBloodGroupQuery, IEnumerable<BloodGroup>>
         {
-            //private readonly IApplicationDbContext repository;
             private ISqlService _service;
-            public GetAllBloodGroupQueryHandler(/*IApplicationDbContext repository,*/ ISqlService service)
+            public GetAllBloodGroupQueryHandler(ISqlService service)
             {
-                //this.repository = repository;
                 _service = service;
             }
             public async Task<IEnumerable<BloodGroup>> Handle(GetAllBloodGroupQuery request, CancellationToken cancellationToken)

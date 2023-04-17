@@ -13,11 +13,11 @@ namespace Project.Infrastructure
         Task<T> FindByIdAsync(long id);
         Task<IEnumerable<T>> GetAllAsync();
         IEnumerable<T> Find(Expression<Func<T, bool>> expression);
-        Task<bool> InsertAsync(T entity);
-        Task<bool> UpdateAsync(T entity);
+        Task<T> InsertAsync(T entity);
+        Task UpdateAsync(T entity);
         void AddRange(IEnumerable<T> entities);
-        Task<bool> RemoveAsync(T entity);
-        Task<bool> RemoveByIdAsync(long id);
+        Task RemoveAsync(T entity);
+        Task RemoveByIdAsync(long id);
         void RemoveRange(IEnumerable<T> entities);
     }
 }
