@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Project.Core.Domain.Authentication;
 using Project.Infrastructure.Settings;
 using System.Reflection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Project.Infrastructure
 {
@@ -23,6 +24,19 @@ namespace Project.Infrastructure
                 option.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             }, ServiceLifetime.Transient);
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+
+
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.SignIn.RequireConfirmedEmail = false;
+            }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddSingleton<ISqlService, SqlService>();
 

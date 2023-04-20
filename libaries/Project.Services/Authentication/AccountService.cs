@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.FeatureManagement;
 using Microsoft.IdentityModel.Tokens;
 using Project.Core.Common;
+using Project.Core.Constants.Authentication;
 using Project.Core.Domain.Authentication;
 using Project.Core.Settings;
 using Project.Services.Exceptions;
@@ -23,12 +24,12 @@ namespace Project.Services.Authentication
     public class AccountService : IAccountService
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailService _emailService;
         private readonly JWTSettings _jwtSettings;
         public AccountService(UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager,
+            RoleManager<ApplicationRole> roleManager,
             IOptions<JWTSettings> jwtSettings,
             SignInManager<ApplicationUser> signInManager,
             IEmailService emailService)
@@ -80,7 +81,7 @@ namespace Project.Services.Authentication
             var user = new ApplicationUser
             {
                 Email = request.Email,
-                DisplayName  = request.DisplayName,
+                DisplayName = request.DisplayName,
                 UserName = request.UserName
             };
             var userWithSameEmail = await _userManager.FindByEmailAsync(request.Email);
@@ -89,13 +90,11 @@ namespace Project.Services.Authentication
                 var result = await _userManager.CreateAsync(user, request.Password);
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(user, Roles.Basic.ToString());
+                    await _userManager.AddToRoleAsync(user, RoleConstants.SystemAdmin);
                     var verificationUri = await SendVerificationEmail(user, origin);
 
-                    if (await _featureManager.IsEnabledAsync(nameof(FeatureManagement.EnableEmailService)))
-                    {
-                        await _emailService.SendEmailAsync(new MailRequest() { From = "amit.naik8103@gmail.com", ToEmail = user.Email, Body = $"Please confirm your account by visiting this URL {verificationUri}", Subject = "Confirm Registration" });
-                    }
+                    //await _emailService.SendEmailAsync(new MailRequest() { From = "amit.naik8103@gmail.com", ToEmail = user.Email, Body = $"Please confirm your account by visiting this URL {verificationUri}", Subject = "Confirm Registration" });
+
                     return new Response<string>(user.Id, message: $"User Registered. Please confirm your account by visiting this URL {verificationUri}");
                 }
                 else

@@ -12,6 +12,7 @@ var configuration = builder.Configuration;
 builder.Services.AddControllers();
 builder.Services.AddInfrastructure(configuration);
 builder.Services.AddServices(configuration);
+builder.Services.AddTransientServices();
 //builder.Services.AddApplicationServices(configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

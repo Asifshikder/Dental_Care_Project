@@ -17,6 +17,8 @@ using System.Text;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Project.Core.Common;
+using Project.Services.Authentication;
+using Project.Services.SeedData;
 
 namespace Project.Services
 {
@@ -26,11 +28,7 @@ namespace Project.Services
         {
             services.AddMediatR(x => x.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
             services.AddTransient<IEmailService, MailService>();
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>()
-               .AddDefaultTokenProviders();
-            #region Services
-            //services.AddTransient<IAccountService, AccountService>();
-            #endregion
+           
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>
             {
@@ -84,6 +82,9 @@ namespace Project.Services
 
         public static IServiceCollection AddTransientServices(this IServiceCollection services)
         {
+            services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<ISeedDataService, SeedDataService>();
+
             return services;
         }
     }
