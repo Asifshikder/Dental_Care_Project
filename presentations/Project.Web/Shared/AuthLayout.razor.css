@@ -1,0 +1,9 @@
+﻿.auth-content {
+    background: #00ffff;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: end;
+}
+
+

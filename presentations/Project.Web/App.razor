@@ -9,7 +9,9 @@
                     }
                     else
                     {
-                        <p role="alert">You are not authorized to access this resource.</p>
+                        <LayoutView Layout="@typeof(AuthLayout)">
+                            <p role="alert">You are not authorized to access this resource.</p>
+                        </LayoutView>
                     }
                 </NotAuthorized>
             </AuthorizeRouteView>

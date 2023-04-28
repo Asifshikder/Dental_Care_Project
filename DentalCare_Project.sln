@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Api", "presentation
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Infrastructure", "libaries\Project.Infrastructure\Project.Infrastructure.csproj", "{D2E2196C-4DD3-423F-AEA7-C93F865B2DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Web", "presentations\Project.Web\Project.Web.csproj", "{8742C400-C8F5-433B-BF73-B57E9B739B10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Web", "presentations\Project.Web\Project.Web.csproj", "{8742C400-C8F5-433B-BF73-B57E9B739B10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

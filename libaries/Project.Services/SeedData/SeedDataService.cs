@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using FluentValidation.Results;
+using Microsoft.AspNetCore.Identity;
 using Project.Core.Constants.Authentication;
 using Project.Core.Domain.Authentication;
 using System;
@@ -31,7 +32,7 @@ namespace Project.Services.SeedData
                     already_configured = false;
                     var roleconstants = new RoleConstants();
                     var roletiems = roleconstants.GetType().GetFields();
-                    foreach(var item in roletiems)
+                    foreach (var item in roletiems)
                     {
                         string name = item.GetRawConstantValue().ToString();
                         ApplicationRole applicationRole = new ApplicationRole()
@@ -41,6 +42,21 @@ namespace Project.Services.SeedData
                         await roleManager.CreateAsync(applicationRole);
                     }
                 }
+                var users = userManager.Users.Any();
+                if (!users)
+                {
+                    already_configured = false;
+                    ApplicationUser applicationUser = new ApplicationUser()
+                    {
+                        Email = UserConstants.SysAdmin_Email,
+                        UserName = UserConstants.SysAdmin_Email,
+                        DisplayName = "System Admin",
+                        DisplayImage = "",
+                        PhoneNumber = ""
+                    };
+                    await userManager.CreateAsync(applicationUser, UserConstants.SysAdmin_Password);
+                }
+                return already_configured;
             }
             catch (Exception)
             {
