@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.Core.Domain.Authentication
+namespace Project.Shared.Authentications
 {
-    public class AuthenticationRequest
+    public class ForgotPasswordRequest
     {
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
-        public string Password { get; set; }
     }
 }

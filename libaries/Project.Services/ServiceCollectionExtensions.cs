@@ -19,6 +19,7 @@ using Newtonsoft.Json;
 using Project.Core.Common;
 using Project.Services.Authentication;
 using Project.Services.SeedData;
+using Project.Shared.Common;
 
 namespace Project.Services
 {
@@ -64,14 +65,14 @@ namespace Project.Services
                             context.HandleResponse();
                             context.Response.StatusCode = 401;
                             context.Response.ContentType = "application/json";
-                            var result = JsonConvert.SerializeObject(new Response<string>("You are not Authorized"));
+                            var result = JsonConvert.SerializeObject(new Response<string> { Data=null, Succeeded=false,Message ="You are not authorized"});
                             return context.Response.WriteAsync(result);
                         },
                         OnForbidden = context =>
                         {
                             context.Response.StatusCode = 403;
                             context.Response.ContentType = "application/json";
-                            var result = JsonConvert.SerializeObject(new Response<string>("You are not authorized to access this resource"));
+                            var result = JsonConvert.SerializeObject(new Response<string> { Data = null, Succeeded = false, Message = "You dont have permission to view this" });
                             return context.Response.WriteAsync(result);
                         },
                     };

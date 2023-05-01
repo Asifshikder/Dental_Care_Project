@@ -1,9 +1,17 @@
-﻿.auth-content {
-    background: #00ffff;
+﻿.auth-bg {
+    background: url('images/bg/auth-bg.jpg');
     height: 100vh;
     max-height: 100vh;
     display: flex;
-    justify-content: end;
+    /*justify-content: end;*/
 }
 
+.auth-content-right {
+    position: relative;
+    margin-top: 100px;
+    width: 60%
+}
 
+.auth-logo {
+    margin-left: 100px;
+}

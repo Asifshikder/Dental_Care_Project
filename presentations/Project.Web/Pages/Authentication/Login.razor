@@ -1,52 +1,62 @@
 ﻿@page "/authentication/login"
+@layout AuthLayout
+
 @using Blazored.LocalStorage;
+@using Project.Shared.Authentications;
+@using Microsoft.AspNetCore.WebUtilities
 @using Project.Web.Models;
+@using Project.Web.Pages.Authentication.Components
+@using Services.Authentications
+
+@inject IAuthService authService
 @inject ILocalStorageService LocalStorage
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
-@using Microsoft.AspNetCore.WebUtilities
-
-@layout AuthLayout
-
 <PageTitle>Login</PageTitle>
 
 <div class="auth-form">
-    
+
     <div class="form-content">
-        <h2>Login</h2>
-        <p>Login to access your </p>
+        <h2 class="title">Login</h2>
+        <p class="details">Login to access your </p>
         <EditForm Model="user" OnValidSubmit="HandleLogin">
             <DataAnnotationsValidator />
             <div class="mb-3">
-                <label for="userName">UserName</label>
-                <InputText id="userName" @bind-Value="user.UserName" class="form-control" />
-                <ValidationMessage For="@(() => user.UserName)" />
+                <label for="userName" class="input-label">Email or phone</label>
+                <InputText id="userName" @bind-Value="user.Email" class="form-control" />
+                <ValidationMessage For="@(() => user.Email)" />
             </div>
             <div class="mb-3">
-                <label for="password">Password</label>
+                <label for="password" class="input-label">Password</label>
                 <InputText id="password" @bind-Value="user.Password" class="form-control" type="password" />
                 <ValidationMessage For="@(() => user.Password)" />
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <div class="text-danger mb-2">
+                <span>@errorMessage</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-login" disabled="@IsButtonDisabled">Login</button>
+                    <div class="app-loader-xs @Loader_Visibility"></div>
+                </div>
+                <div class=""><a href="authentication/forgotpassword" class="text-forgotpass">Forgot password?</a></div>
+            </div>
+
         </EditForm>
-        <div class="text-danger">
-            <span>@errorMessage</span>
-        </div>
+
     </div>
-    <div class="auth-footer">
-        <div>Easy Denatal</div>
-        <div>&copy; @DateTime.Now.Year</div>
-    </div>
+    <AuthFooter />
 </div>
 
 
 @code {
-    private LoginViewModel user = new LoginViewModel();
+    private AuthenticationRequest user = new AuthenticationRequest();
 
     private string errorMessage = string.Empty;
 
     private string returnUrl = string.Empty;
-
+    private bool IsButtonDisabled = false;
+    private string Loader_Visibility = "d-none";
     protected override void OnInitialized()
     {
         var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
@@ -58,19 +68,29 @@
 
     private async Task HandleLogin()
     {
-        //var result = await AuthService.Login(user);
-        //if (result.Success)
-        //{
-        //    errorMessage = string.Empty;
+        IsButtonDisabled = true;
+        Loader_Visibility = "d-block";
+        var result = await authService.Login(user);
 
-        //    await LocalStorage.SetItemAsync("authToken", result.Data);
-        //    await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        //    NavigationManager.NavigateTo(returnUrl);
-        //}
-        //else
-        //{
-        //    errorMessage = result.Message;
-        //}
+        if (result.Succeeded)
+        {
+            errorMessage = string.Empty;
+            UserModel user = new UserModel()
+                {
+                    DisplayImage = result.Data.DisplayImage,
+                    DisplayName = result.Data.DisplayName
+                };
+            await LocalStorage.SetItemAsync("userinfo", user);
+            await LocalStorage.SetItemAsync("authToken", result.Data.JWToken);
+            await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            NavigationManager.NavigateTo(returnUrl);
+        }
+        else
+        {
+            errorMessage = result.Message;
+        }
+        IsButtonDisabled = false;
+        Loader_Visibility = "d-none";
     }
 }
 

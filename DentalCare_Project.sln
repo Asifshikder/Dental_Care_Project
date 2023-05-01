@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Infrastructure", "l
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Web", "presentations\Project.Web\Project.Web.csproj", "{8742C400-C8F5-433B-BF73-B57E9B739B10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Shared", "shared\Project.Shared\Project.Shared.csproj", "{39644C10-98C3-4707-A65A-0A5E12F02659}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8742C400-C8F5-433B-BF73-B57E9B739B10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8742C400-C8F5-433B-BF73-B57E9B739B10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8742C400-C8F5-433B-BF73-B57E9B739B10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39644C10-98C3-4707-A65A-0A5E12F02659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39644C10-98C3-4707-A65A-0A5E12F02659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39644C10-98C3-4707-A65A-0A5E12F02659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39644C10-98C3-4707-A65A-0A5E12F02659}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{AF13C6E2-85E9-4797-B6E8-2E1A84F740A2} = {DA99E626-CBFC-43CA-8617-0E418B88F2EA}
 		{D2E2196C-4DD3-423F-AEA7-C93F865B2DDE} = {A1E6459B-AB95-49E6-89EB-5EB6BDB7C999}
 		{8742C400-C8F5-433B-BF73-B57E9B739B10} = {DA99E626-CBFC-43CA-8617-0E418B88F2EA}
+		{39644C10-98C3-4707-A65A-0A5E12F02659} = {4500E4DD-8393-4DB5-90D7-0DFAC892F2E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D1DF149-6DE9-40F9-B088-D8E2A2D46D73}

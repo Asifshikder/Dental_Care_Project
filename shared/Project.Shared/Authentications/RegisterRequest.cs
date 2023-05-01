@@ -5,15 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.Core.Domain.Authentication
+namespace Project.Shared.Authentications
 {
-    public class ResetPasswordRequest
+    public class RegisterRequest
     {
+        [Required]
+        public string DisplayName { get; set; }
+
         [Required]
         [EmailAddress]
         public string Email { get; set; }
         [Required]
-        public string Token { get; set; }
+        [MinLength(6)]
+        public string UserName { get; set; }
+
         [Required]
         [MinLength(6)]
         public string Password { get; set; }

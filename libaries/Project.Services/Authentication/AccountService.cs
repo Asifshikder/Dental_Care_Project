@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
-using Microsoft.FeatureManagement;
 using Microsoft.IdentityModel.Tokens;
 using Project.Core.Common;
 using Project.Core.Constants.Authentication;
@@ -9,15 +8,12 @@ using Project.Core.Domain.Authentication;
 using Project.Core.Settings;
 using Project.Services.Exceptions;
 using Project.Services.Mail;
-using System;
-using System.Collections.Generic;
-using System.Data;
+using Project.Shared.Authentications;
+using Project.Shared.Common;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Project.Services.Authentication
 {
@@ -46,67 +42,73 @@ namespace Project.Services.Authentication
             var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
-                throw new ApiException($"No Accounts Registered with {request.Email}.");
+                return new Response<AuthenticationResponse> { Data = null, Message = "User not found", Succeeded = false };
+                //throw new ApiException($"No Accounts Registered with {request.Email}.");
             }
             var result = await _signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
             if (!result.Succeeded)
             {
-                throw new ApiException($"Invalid Credentials for '{request.Email}'.");
+                return new Response<AuthenticationResponse> { Data = null, Message = "Username or password is incorrect", Succeeded = false };
             }
-            if (!user.EmailConfirmed)
-            {
-                throw new ApiException($"Account Not Confirmed for '{request.Email}'.");
-            }
+            //if (!user.EmailConfirmed)
+            //{
+            //    return new Response<AuthenticationResponse> { Data = null, Message = "Email is not valid", Succeeded = false };
+            //}
             JwtSecurityToken jwtSecurityToken = await GenerateJWToken(user);
             AuthenticationResponse response = new AuthenticationResponse();
             response.Id = user.Id;
             response.JWToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
             response.Email = user.Email;
             response.UserName = user.UserName;
+            response.DisplayImage = user.DisplayImage;
+            response.DisplayName = user.DisplayName;
             var rolesList = await _userManager.GetRolesAsync(user).ConfigureAwait(false);
             response.Roles = rolesList.ToList();
             response.IsVerified = user.EmailConfirmed;
             var refreshToken = GenerateRefreshToken(ipAddress);
             response.RefreshToken = refreshToken.Token;
-            return new Response<AuthenticationResponse>(response, $"Authenticated {user.UserName}");
+
+            return new Response<AuthenticationResponse> { Data = response, Message = "Success", Succeeded = true };
         }
 
-        public async Task<Response<string>> RegisterAsync(RegisterRequest request, string origin)
-        {
-            var userWithSameUserName = await _userManager.FindByNameAsync(request.UserName);
-            if (userWithSameUserName != null)
-            {
-                throw new ApiException($"Username '{request.UserName}' is already taken.");
-            }
-            var user = new ApplicationUser
-            {
-                Email = request.Email,
-                DisplayName = request.DisplayName,
-                UserName = request.UserName
-            };
-            var userWithSameEmail = await _userManager.FindByEmailAsync(request.Email);
-            if (userWithSameEmail == null)
-            {
-                var result = await _userManager.CreateAsync(user, request.Password);
-                if (result.Succeeded)
-                {
-                    await _userManager.AddToRoleAsync(user, RoleConstants.SystemAdmin);
-                    var verificationUri = await SendVerificationEmail(user, origin);
+        //public async Task<Response<string>> RegisterAsync(RegisterRequest request, string origin)
+        //{
+        //    var userWithSameUserName = await _userManager.FindByNameAsync(request.UserName);
+        //    if (userWithSameUserName != null)
+        //    {
+        //        return new Response<string> { Data = null, Message = "Email is not valid", Succeeded = false };
 
-                    //await _emailService.SendEmailAsync(new MailRequest() { From = "amit.naik8103@gmail.com", ToEmail = user.Email, Body = $"Please confirm your account by visiting this URL {verificationUri}", Subject = "Confirm Registration" });
+        //        throw new ApiException($"Username '{request.UserName}' is already taken.");
+        //    }
+        //    var user = new ApplicationUser
+        //    {
+        //        Email = request.Email,
+        //        DisplayName = request.DisplayName,
+        //        UserName = request.UserName
+        //    };
+        //    var userWithSameEmail = await _userManager.FindByEmailAsync(request.Email);
+        //    if (userWithSameEmail == null)
+        //    {
+        //        var result = await _userManager.CreateAsync(user, request.Password);
+        //        if (result.Succeeded)
+        //        {
+        //            await _userManager.AddToRoleAsync(user, RoleConstants.SystemAdmin);
+        //            var verificationUri = await SendVerificationEmail(user, origin);
 
-                    return new Response<string>(user.Id, message: $"User Registered. Please confirm your account by visiting this URL {verificationUri}");
-                }
-                else
-                {
-                    throw new ApiException($"{result.Errors.ToList()[0].Description}");
-                }
-            }
-            else
-            {
-                throw new ApiException($"Email {request.Email} is already registered.");
-            }
-        }
+        //            //await _emailService.SendEmailAsync(new MailRequest() { From = "amit.naik8103@gmail.com", ToEmail = user.Email, Body = $"Please confirm your account by visiting this URL {verificationUri}", Subject = "Confirm Registration" });
+
+        //            return new Response<string>(user.Id, message: $"User Registered. Please confirm your account by visiting this URL {verificationUri}");
+        //        }
+        //        else
+        //        {
+        //            throw new ApiException($"{result.Errors.ToList()[0].Description}");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        throw new ApiException($"Email {request.Email} is already registered.");
+        //    }
+        //}
 
         private async Task<JwtSecurityToken> GenerateJWToken(ApplicationUser user)
         {
@@ -166,20 +168,20 @@ namespace Project.Services.Authentication
             return verificationUri;
         }
 
-        public async Task<Response<string>> ConfirmEmailAsync(string userId, string code)
-        {
-            var user = await _userManager.FindByIdAsync(userId);
-            code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
-            var result = await _userManager.ConfirmEmailAsync(user, code);
-            if (result.Succeeded)
-            {
-                return new Response<string>(user.Id, message: $"Account Confirmed for {user.Email}. You can now use the /api/Account/authenticate endpoint.");
-            }
-            else
-            {
-                throw new ApiException($"An error occured while confirming {user.Email}.");
-            }
-        }
+        //public async Task<Response<string>> ConfirmEmailAsync(string userId, string code)
+        //{
+        //    var user = await _userManager.FindByIdAsync(userId);
+        //    code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
+        //    var result = await _userManager.ConfirmEmailAsync(user, code);
+        //    if (result.Succeeded)
+        //    {
+        //        return new Response<string>(user.Id, message: $"Account Confirmed for {user.Email}. You can now use the /api/Account/authenticate endpoint.");
+        //    }
+        //    else
+        //    {
+        //        throw new ApiException($"An error occured while confirming {user.Email}.");
+        //    }
+        //}
 
         private RefreshToken GenerateRefreshToken(string ipAddress)
         {
@@ -211,19 +213,19 @@ namespace Project.Services.Authentication
             await _emailService.SendEmailAsync(emailRequest);
         }
 
-        public async Task<Response<string>> ResetPassword(ResetPasswordRequest model)
-        {
-            var account = await _userManager.FindByEmailAsync(model.Email);
-            if (account == null) throw new ApiException($"No Accounts Registered with {model.Email}.");
-            var result = await _userManager.ResetPasswordAsync(account, model.Token, model.Password);
-            if (result.Succeeded)
-            {
-                return new Response<string>(model.Email, message: $"Password Resetted.");
-            }
-            else
-            {
-                throw new ApiException($"Error occured while reseting the password.");
-            }
-        }
+        //public async Task<Response<string>> ResetPassword(ResetPasswordRequest model)
+        //{
+        //    var account = await _userManager.FindByEmailAsync(model.Email);
+        //    if (account == null) throw new ApiException($"No Accounts Registered with {model.Email}.");
+        //    var result = await _userManager.ResetPasswordAsync(account, model.Token, model.Password);
+        //    if (result.Succeeded)
+        //    {
+        //        return new Response<string>(model.Email, message: $"Password Resetted.");
+        //    }
+        //    else
+        //    {
+        //        throw new ApiException($"Error occured while reseting the password.");
+        //    }
+        //}
     }
 }

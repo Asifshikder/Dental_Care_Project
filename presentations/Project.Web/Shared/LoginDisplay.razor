@@ -1,24 +1,32 @@
-﻿@*@using Microsoft.AspNetCore.Components.Authorization
-@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
-
+﻿@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Blazored.LocalStorage
+@using Project.Web.Models;
+@inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager Navigation
-@inject SignOutSessionStateManager SignOutManager
+@inject ILocalStorageService LocalStorage
 
 <AuthorizeView>
     <Authorized>
-        Hello, @context.User.Identity?.Name!
-        <button class="nav-link btn btn-link" @onclick="BeginSignOut">Log out</button>
+        Hello, @user?.DisplayName!
+        <button class="nav-link btn btn-link" @onclick="Logout">Log out</button>
     </Authorized>
     <NotAuthorized>
         <a href="authentication/login">Log in</a>
     </NotAuthorized>
 </AuthorizeView>
 
-@code{
-    private async Task BeginSignOut(MouseEventArgs args)
+@code {
+    private UserModel? user;
+    protected override async Task OnInitializedAsync()
     {
-        await SignOutManager.SetSignOutState();
-        Navigation.NavigateTo("authentication/logout");
+        user = await LocalStorage.GetItemAsync<UserModel>("userinfo");
+    }
+    private async Task Logout()
+    {
+        var authProvider = (CustomAuthStateProvider)authenticationStateProvider;
+        await LocalStorage.RemoveItemAsync("authToken");
+        await authProvider.LogoutAuthenticationStateAsync();
+        Navigation.NavigateTo("/", true);
     }
 }
-*@

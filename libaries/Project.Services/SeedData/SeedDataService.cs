@@ -60,7 +60,6 @@ namespace Project.Services.SeedData
             }
             catch (Exception)
             {
-
                 throw;
             }
             return true;

@@ -5,12 +5,14 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Project.Core.Domain.Authentication
+namespace Project.Shared.Authentications
 {
     public class AuthenticationResponse
     {
         public string Id { get; set; }
         public string UserName { get; set; }
+        public string DisplayName { get; set; }
+        public string DisplayImage { get; set; }
         public string Email { get; set; }
         public List<string> Roles { get; set; }
         public bool IsVerified { get; set; }
@@ -18,4 +20,5 @@ namespace Project.Core.Domain.Authentication
         [JsonIgnore]
         public string RefreshToken { get; set; }
     }
+
 }
