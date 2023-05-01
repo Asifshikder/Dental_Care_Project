@@ -1,0 +1,10 @@
+﻿<a class="dropdown-toggle" href="#" role="button" id="@id" data-bs-toggle="dropdown" aria-expanded="false">
+    <img src="@ImageUrl" class="@ClassNames" alt="">
+</a>
+@code {
+    private string id = Guid.NewGuid().ToString();
+    [Parameter]
+    public string ImageUrl { get; set; }
+    [Parameter]
+    public string ClassNames { get; set; }
+}
