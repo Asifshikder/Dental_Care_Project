@@ -1,9 +1,10 @@
-﻿<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    @ChildContent
-</ul>
+﻿
+<li class="@ClassName">@ChildContent</li>
 
 @code {
     [Parameter]
     public RenderFragment ChildContent { get; set; }
+    [Parameter]
+    public string ClassName { get; set; }
 
 }

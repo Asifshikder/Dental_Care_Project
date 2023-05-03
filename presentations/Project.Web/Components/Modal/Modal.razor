@@ -1,0 +1,47 @@
+﻿<div class="modal @ModalClass" tabindex="-1" role="dialog" style="display:@ModalDisplay">
+    <div class="modal-dialog @SizeNames @PositionNames" role="document">
+        <div class="modal-content @ModalStyles">
+            @ChildContent
+        </div>
+    </div>
+</div>
+@if (backdrop)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+
+@code {
+
+
+    [Parameter]
+    public bool ShowBackdrop { get; set; }
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+    [Parameter]
+    public string SizeNames { get; set; }
+    [Parameter]
+    public string PositionNames { get; set; }
+    [Parameter]
+    public string ModalStyles { get; set; }
+    public Guid Guid = Guid.NewGuid();
+    public string ModalDisplay = "none;";
+    public string ModalClass = "";
+    public bool backdrop = false;
+    public bool IsClose { get; set; }
+    public void Open()
+    {
+        ModalDisplay = "block;";
+        ModalClass = "Show";
+        backdrop = ShowBackdrop;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        ModalDisplay = "none";
+        ModalClass = "";
+        backdrop = false;
+        StateHasChanged();
+    }
+}

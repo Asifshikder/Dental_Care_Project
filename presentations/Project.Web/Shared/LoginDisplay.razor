@@ -8,11 +8,10 @@
 @inject ILocalStorageService LocalStorage
 <Dropdown>
     <DropdownButtonImage ClassNames="user-dropdown-image" ImageUrl="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg"></DropdownButtonImage>
-    <DropdownItem>
-        <li class="dropdown-option"><a class="dropdown-item-nav" href="#">Action</a></li>
-        <li class="dropdown-option"><a class="dropdown-item-nav" href="#">Another action</a></li>
-        <li class="dropdown-option"><a class="dropdown-item-nav" href="#">Something else here</a></li>
-    </DropdownItem>
+    <DropdownItemContainer>
+        <DropdownItem ClassName="dropdown-option"><a class="dropdown-item-nav" href="#">Action</a></DropdownItem>
+        <DropdownItem ClassName="dropdown-option"><a class="dropdown-item-nav" href="#">Action</a></DropdownItem>
+    </DropdownItemContainer>
 </Dropdown>
 <AuthorizeView>
     <Authorized>

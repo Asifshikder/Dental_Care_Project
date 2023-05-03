@@ -5,7 +5,6 @@
 @using Project.Shared.Authentications;
 @using Microsoft.AspNetCore.WebUtilities
 @using Project.Web.Models;
-@using Project.Web.Pages.Authentication.Components
 @using Services.Authentications
 
 @inject IAuthService authService
@@ -13,40 +12,44 @@
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
 <PageTitle>Login</PageTitle>
-
-<div class="auth-form">
-
-    <div class="form-content">
-        <h2 class="title">Login</h2>
-        <p class="details">Login to access your </p>
-        <EditForm Model="user" OnValidSubmit="HandleLogin">
-            <DataAnnotationsValidator />
-            <div class="mb-3">
-                <label for="userName" class="input-label">Email or phone</label>
-                <InputText id="userName" @bind-Value="user.Email" class="form-control" />
-                <ValidationMessage For="@(() => user.Email)" />
-            </div>
-            <div class="mb-3">
-                <label for="password" class="input-label">Password</label>
-                <InputText id="password" @bind-Value="user.Password" class="form-control" type="password" />
-                <ValidationMessage For="@(() => user.Password)" />
-            </div>
-            <div class="text-danger mb-2">
-                <span>@errorMessage</span>
-            </div>
-            <div class="d-flex justify-content-between">
-                <div class="d-flex">
-                    <button type="submit" class="btn btn-login" disabled="@IsButtonDisabled">Login</button>
-                    <div class="app-loader-xs @Loader_Visibility"></div>
-                </div>
-                <div class=""><a href="authentication/forgotpassword" class="text-forgotpass">Forgot password?</a></div>
-            </div>
-
-        </EditForm>
-
+<div class="row">
+    <div class="col-sm-7 col-md-7 col-12 d-none d-sm-block">
     </div>
-    <AuthFooter />
+    <div class="col-sm-5 col-md-5 col-12">
+        <div class="form-content">
+            <div class="auth-form">
+                <h2 class="title">Login</h2>
+                <p class="details">Login to access your </p>
+                <EditForm Model="user" OnValidSubmit="HandleLogin">
+                    <DataAnnotationsValidator />
+                    <div class="mb-3">
+                        <label for="userName" class="input-label">Email or phone</label>
+                        <InputText id="userName" @bind-Value="user.Email" class="form-control" />
+                        <ValidationMessage For="@(() => user.Email)" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="input-label">Password</label>
+                        <InputText id="password" @bind-Value="user.Password" class="form-control" type="password" />
+                        <ValidationMessage For="@(() => user.Password)" />
+                    </div>
+                    <div class="text-danger mb-2">
+                        <span>@errorMessage</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <button type="submit" class="btn btn-login btn-rounded-20" disabled="@IsButtonDisabled">Login</button>
+                            <div class="app-loader-xs @Loader_Visibility"></div>
+                        </div>
+                        <div class=""><a href="authentication/forgotpassword" class="text-forgotpass">Forgot password?</a></div>
+                    </div>
+                </EditForm>
+
+            </div>
+
+        </div>
+    </div>
 </div>
+
 
 
 @code {

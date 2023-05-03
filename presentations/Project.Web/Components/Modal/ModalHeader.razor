@@ -1,0 +1,12 @@
+﻿<div class="modal-header">
+    <h5 class="modal-title">@ModalTitle</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="()=>ParentComponent.Close()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@code {
+    [Parameter]
+    public string ModalTitle { get; set; }
+    [Parameter]
+    public Modal ParentComponent { get; set; }
+}
