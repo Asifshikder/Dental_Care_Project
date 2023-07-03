@@ -97,7 +97,8 @@
             UserModel user = new UserModel()
                 {
                     DisplayImage = result.Data.DisplayImage,
-                    DisplayName = result.Data.DisplayName
+                    DisplayName = result.Data.DisplayName,
+
                 };
             await LocalStorage.SetItemAsync("userinfo", user);
             await LocalStorage.SetItemAsync("authToken", result.Data.JWToken);
